@@ -1,0 +1,27 @@
+sudo: false
+language: python
+env:
+  - PYTHON_VERSION=3.6
+before_install:
+  - sudo add-apt-repository ppa:mc3man/trusty-media -y
+  - sudo apt-get update
+  - sudo apt-get install ffmpeg -y
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
+  - export PATH=/home/travis/miniconda3/bin:$PATH
+install:
+  # q2-dummy-types is only required for the dummy methods and
+  # visualizers provided as examples. Remove this dependency when you're
+  # ready to develop your plugin, and add your own dependencies (if there are
+  # any).
+  - wget -q https://raw.githubusercontent.com/qiime2/environment-files/master/latest/staging/qiime2-latest-py35-linux-conda.yml
+  - conda env create -q -n test-env --file qiime2-latest-py35-linux-conda.yml
+  - source activate test-env
+  # Change this to Zaneveld before final commit
+  - pip install -q flake8
+  - pip install git+https://github.com/slpeoples/karenina.git
+  - pip install .
+script:
+  #- flake8 q2_karenina setup.py
+  - python -m unittest discover tests -v
