@@ -24,8 +24,7 @@ def fit_timeseries(output_dir: str, pcoa : str, metadata:str, method : str,
     if 'None' in treatment_col:
 	    treatment_col = None
 
-
-    #readin and format      
+    #read in and format input data     
     site, metadata = parse_pcoa(pcoa, individual_col,\
       timepoint_col, treatment_col, metadata=None)
     model_input = parse_metadata(metadata, individual_col,\
@@ -73,5 +72,6 @@ def render_index_html(output_dir,plot_name):
     # https://github.com/qiime2/q2templates/blob/master/q2templates/_templates.py
 
     render(index, output_dir, context={'plot_name': plot_name})
+
 
 
