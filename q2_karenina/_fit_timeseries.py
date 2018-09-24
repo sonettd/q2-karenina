@@ -13,7 +13,7 @@ __status__ = "Development"
 from q2templates import render
 from os.path import join
 from pkg_resources import resource_filename
-from karenina.fit_timeseries import parse_pcoa,parse_metadata
+from karenina.fit_timeseries import parse_pcoa,parse_metadata,fit_input
 
 def fit_timeseries(output_dir: str, pcoa : str, metadata:str, method : str, 
                 individual_col: str, timepoint_col: str, treatment_col: str) -> None:
@@ -26,9 +26,9 @@ def fit_timeseries(output_dir: str, pcoa : str, metadata:str, method : str,
 
 
     #readin and format      
-    site, metadata = k_fit_timeseries.parse_pcoa(pcoa, individual_col,\
+    site, metadata = parse_pcoa(pcoa, individual_col,\
       timepoint_col, treatment_col, metadata=None)
-    model_input = k_fit_timeseries.parse_metadata(metadata, individual_col,\
+    model_input = parse_metadata(metadata, individual_col,\
       timepoint_col, treatment_col, site)
    
      
@@ -37,7 +37,7 @@ def fit_timeseries(output_dir: str, pcoa : str, metadata:str, method : str,
         # in which all individuals with the same treatment
         #have the same model parameters.
         
-        output, cohort_output = k_fit_timeseries.fit_input(model_input,\
+        output, cohort_output = fit_input(model_input,\
           individual_col, timepoint_col, treatment_col, method)
         
         result = cohort_output
@@ -45,13 +45,13 @@ def fit_timeseries(output_dir: str, pcoa : str, metadata:str, method : str,
     else:
         #IF no treatment is provided, fit a model to each individual
  
-       result = k_fit_timeseries.fit_input(model_input, individual_col,\
+       result = fit_input(model_input, individual_col,\
           timepoint_col, treatment_col, method)
  
-        plot_name = 'Ornstein-Uhlenbeck individual model fit results (method={})'.format(method)
+       plot_name = 'Ornstein-Uhlenbeck individual model fit results (method={})'.format(method)
    
     #Output the results (individual or cohort based model fit) to a CSV filte 
-    result.to_csv(os.path.join(output_dir,"fit_timeseries_results.csv"), index=False)
+    result.to_csv(join(output_dir,"fit_timeseries_results.csv"), index=False)
 
     #Generate the index.html file required by QIIME2 by filling in the template
     render_index_html(output_dir,plot_name)
@@ -66,7 +66,7 @@ def render_index_html(output_dir,plot_name):
     template_dir = resource_filename('q2_karenina', 'assets')
 
     #get the path to our basic, unfilled index.html file (in the assets folder of q2_emperor)
-    index = os.path.join(template_dir, 'index.html')
+    index = join(template_dir, 'index.html')
 
     #Use q2_templates.render to fill in data specific to our output in this visualization.
     #Documentation for q2_templates.render is available here:
