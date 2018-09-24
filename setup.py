@@ -22,7 +22,7 @@ setup(
     # THIS IS BROKEN AND NEEDS FIXING
 	    # FOR NOW, REQUIRE USERS TO INSTALL KARENINA FIRST
 	    # pip install git+https://github.com/zaneveld/karenina
-	dependency_links=['git+https://github.com/slpeoples/karenina.git'],
+	dependency_links=['git+https://github.com/zaneveld/karenina.git'],
     author="Jesse Zaneveld",
     author_email="zaneveld@gmail.com",
     description="This script simulates microbiome " +
@@ -49,5 +49,6 @@ setup(
 	entry_points={
         "qiime2.plugins":
         ["q2-karenina=q2_karenina.plugin_setup:plugin"]
-    }
+    },
+    package_data={'q2_karenina':['assets/*']}
 )

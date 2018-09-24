@@ -5,7 +5,7 @@
 Simulation and modeling tools for studying Anna Karenina effects in animal microbiomes 
 This package aims to develop tools for modeling microbiome variability in disease.  Initial versions focus on simulating microbiome change over time using simple Ornstein-Uhlenbeck (OU) models.  
 
-This package is enables [karenina](https://github.com/zaneveld/karenina) to be ran as a Qiime2 Plugin.
+This package enables [karenina](https://github.com/zaneveld/karenina) to be run as a Qiime2 Plugin.
 
 * [karenina](https://github.com/zaneveld/karenina)
 * [Documentation](https://zaneveld.github.io/karenina/html/index.html)
