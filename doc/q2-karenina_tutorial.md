@@ -195,7 +195,7 @@ These are applied to all 3 PC axes for each individual: _sigma_: **0.25**, _lamb
 
 The outcome produces the following model:
 
-https://media.giphy.com/media/ce1T0un8hq8W7v8qcm/giphy.gif
+![Animation of AKP effects](https://media.giphy.com/media/ce1T0un8hq8W7v8qcm/giphy.gif)
 
 #### Fitting the simulated datset using a cohort model
 
