@@ -40,10 +40,4 @@ The initial q2-karenina release allows for fitting of Ornstein-Uhlenbeck models 
 
 Models can either be fit to timeseries from each subject separately (individual fit), or can be fit to all individuals within a treatment collectively (cohort fit) using the spatial_ornstein_uhlenbeck.py script
 
-**Inputs**
 
-  QIIME2 Ordination Results
-
-  QIIME2 Metadata (if metadata are not embedded in Ordination Results)
-
-In practice, the sample should have multiple time-points per individual.
