@@ -1,14 +1,6 @@
 # q2-karenina
 [![Build Status](https://travis-ci.org/zaneveld/q2-karenina.svg?branch=master)](https://travis-ci.org/zaneveld/q2-karenina)
 
-**Tutorial**
-* [Tutorial](https://github.com/zaneveld/q2-karenina/blob/master/doc/q2-karenina_tutorial.md)
-
-**Other links**
-* [karenina](https://github.com/zaneveld/karenina)
-* [Documentation](https://zaneveld.github.io/karenina/html/index.html)
-* [QIIME 2](https://qiime2.org)
-
 ### Approach
 
 q2-karenina in a QIIME2 plug-in for the karenina python package, which provides simulation and model-fitting tools for studying stochastic variability in microbial communities. The package is named for Anna Karenina Principle effects, in which certain diseases and environmental stressors can cause increased stochastic variability in animal microbiomes. A recent review of this phenomenon can be found in [Zaneveld et al.,Nature Microbiology, 2017](https://www.ncbi.nlm.nih.gov/pubmed/28836573). This pattern is in contrast to stressors that shift the mean *position* of microbial communities in PCoA space.
@@ -36,6 +28,15 @@ Where:
 ### Release
 
 The initial q2-karenina release allows for fitting of Ornstein-Uhlenbeck models to QIIME2 ordination results using the fit_spatial_ornstein_uhlenbeck visualizer, and returns the parameters for the model fit. Future development will wrap other functionality in karenina such as simulation of QIIME2-compatible OrdinationResult and Metadata files based on Ornstein-Uhlenbeck model parameters, benchmarks of the model fitting procedure, and visualization.
+
+**Tutorial**
+* [Tutorial](https://github.com/zaneveld/q2-karenina/blob/master/doc/q2-karenina_tutorial.md)
+
+**Other links**
+* [karenina](https://github.com/zaneveld/karenina)
+* [Documentation](https://zaneveld.github.io/karenina/html/index.html)
+* [QIIME 2](https://qiime2.org)
+
 
 Models can either be fit to timeseries from each subject separately (individual fit), or can be fit to all individuals within a treatment collectively (cohort fit) using the spatial_ornstein_uhlenbeck.py script
 
