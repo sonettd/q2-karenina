@@ -25,13 +25,13 @@ dx/dt = dW * sigma + (x - theta)* lambda
 
 Where:
 
-dx/dt = change in the position of a microbial community on a particular axis of the PCoA plot 
+  dx/dt = change in the position of a microbial community on a particular axis of the PCoA plot 
 
-dW = the Weiner process which generates Brownian motion (effectively drawing the extent of displacement from a normal distribution)
+  dW = the Weiner process which generates Brownian motion (effectively drawing the extent of displacement from a normal distribution)
 
-sigma = a constant that scales the Brownian motion component
+  sigma = a constant that scales the Brownian motion component
 
-theta = the 'home position' or attractor for the community. Over time (in the absence of disturbance or e.g. seasonal effects that alter the mean composition) it is expected that this position will be the mean composition of microbiome samples from an individual. It is also expected that in a stable community this will be the centroid of samples taken from an individual longitudinally.
+  theta = the 'home position' or attractor for the community. Over time (in the absence of disturbance or e.g. seasonal effects that alter the mean composition) it is expected that this position will be the mean composition of microbiome samples from an individual. It is also expected that in a stable community this will be the centroid of samples taken from an individual longitudinally.
 
 ### Release
 
@@ -41,8 +41,8 @@ Models can either be fit to timeseries from each subject separately (individual 
 
 **Inputs**
 
-QIIME2 Ordination Results
+  QIIME2 Ordination Results
 
-QIIME2 Metadata (if metadata are not embedded in Ordination Results)
+  QIIME2 Metadata (if metadata are not embedded in Ordination Results)
 
 In practice, the sample should have multiple time-points per individual.
