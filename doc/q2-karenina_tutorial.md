@@ -223,7 +223,15 @@ _visualization.qzv_ contains output files with the  cohort model parameters. The
 
 ![image|690x141](https://i.imgur.com/liy98gt.png) 
 
+#### Interpreting the results
 
+The simulation data represents a relatively small dataset, so we expect there should be some error in inferring the model parameters. Ideally, we should see that the control treatment group reflects the initial parameters that we specified in the simulation, whereas the destabilizing treatment has a lambda around zero (since this is what was simulated).
+
+In the simulation, we applied the following to all 3 PC axes for each individual: _sigma_: **0.25**, _lambda_: **0.20**, and _theta_: **0.00**.At timepoint 15, the simulation reduces **lambda** to  **0.00** for 3 of the individuals (destabilizing_treatment). 
+
+So we should expect _sigma_ = 0.25 and _theta_ = 0.0 for both datasets. However, the destabilizing treatment dataset should have lambda around 0.0. 
+
+Comparing the results of model fitting vs. our simulation parameters shows that, as expected, lambda is near to 0.0 in the destabilizing treatment estimate, but not the control estimate. Also as expected, when we compare the two we see that both control and destabilizing treatment groups have very similar parameters for sigma around 0.25.  The estimate for theta is fairly near 0.0, but a bit off for the destabilizing treatment. This suggests that if some points happen to randomly drift in the same direction (due to low lambda) it may lead theta to be misestimated in a small dataset.   
 
 ## Coming up!
 
