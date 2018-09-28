@@ -198,7 +198,7 @@ The outcome produces the following model:
 
 #### Fitting the simulated datset using a cohort model
 
-REMINDER: If you didn't download both datasets at the beginning, The data used in this tutorial can be found [here](https://github.com/zaneveld/karenina/blob/master/data/fit_timeseries/simulation.qza?raw=true)
+> **Note:** If you didn't download both datasets at the beginning, The data used in this tutorial can be found [here](https://github.com/zaneveld/karenina/blob/master/data/fit_timeseries/simulation.qza?raw=true)
 
 Using fit_timeseries, we will attempt to estimate these input parameters by fitting to the treatment cohorts.
 
@@ -232,11 +232,10 @@ _visualization.qzv_ contains output files with the  cohort model parameters. The
 * **Benchmarking of individual time-series fit accuracy***: We are currently benchmarking accuracy across a range of scenarios.
 Preliminary results fitting an OU model to simulated data within a single individual/PC axis
 
-Sigma
 >![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_sigma_err.png?raw=true) 
-Lambda
+
 >![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_lambda_err.png?raw=true) 
-Theta
+
 >![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_theta_err.png?raw=true) 
 
 Please feel free to submit any issues or suggestions as we continue to develop this plugin!
