@@ -112,7 +112,7 @@ To generate a result .qsv visualization folder, we execute the following command
 qiime karenina fit-timeseries --p-timepoint-col DaysSinceExperimentStart  --p-pcoa weighted_unifrac_pcoa_results.qza --p-metadata None --o-visualization ./moving_pictures_fit_timeseries_results --p-individual-col 'Subject,BodySite'  --p-treatment-col None --verbose --p-method basinhopping
 ```
 
-(Note that the analysis may take a few minutes to run)
+(Note that the analysis may take about 9 minutes to run - a perfect time to grab a cup of coffee!)
 
 A successful visualization provides the following output:
 
