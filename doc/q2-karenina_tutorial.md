@@ -8,7 +8,7 @@ The q2-karenina plugin is in active development and will include additional feat
 
 ## Setup
 
-###Installation
+### Installation
 
 q2-karenina requires **Qiime2**, **python 3.5+**, **scipy**, **pandas**, **matplotlib**, and **seaborn**. Since these are fairly ubiquitous packages, let's begin by installing **ffmpeg** (a visualization dependency):
 
@@ -27,7 +27,7 @@ Lastly, we ensure that q2-karenina has been properly installed:
 
     qiime karenina fit-timeseries --help
 
-###Download Data
+### Download Data
 
 Next we'll manually download ordination results that will be used in model fitting:
 
@@ -126,7 +126,7 @@ All QIIME2 visualizations output to the .qzv format. Under the hood, this is jus
 
 There are three main ways of viewing your results.
 
-#####Method 1: Using the QIIME2 commandline
+##### Method 1: Using the QIIME2 commandline
 
 The resulting .qza file can be viewed on the commandline as with any other QIIME2 visualization.
 
@@ -145,17 +145,17 @@ qiime tools view ./moving_pictures_timeseries_results.qzv
 
 A webpage should open displaying a  single link to a text file containing the results of the model fit.
 
-#####Method 2: Using view.qiime2.org
+##### Method 2: Using view.qiime2.org
 
 Alternatively, you can navigate a web browser to [view.qiime2.org](http://www.view.qiime2.org) and drag the .qzv file where indicated to view the results.
 
 
-#####Method 3: Manually opening the text file
+##### Method 3: Manually opening the text file
 
 Finally, if you're having any trouble, it's worth noting that .qzv files are simply zipped directories. It is also possible to unzip them directly and navigate their internal file structure to find what you need (although this isn't necessary in most cases). The results will be in the /data/ folder.
 
 
-####Interpreting the Ornstein-Uhlenbeck model results
+#### Interpreting the Ornstein-Uhlenbeck model results
 
 If you successfully ran the fit-timeseries command and opened the .qzv file, you should now have a result .csv (comma-separated values) text file that can be opened in Microsoft Excel, Google Sheets, etc.
 
@@ -171,7 +171,7 @@ The results .csv file has columns for describing the metadata parameter(s) on wh
 ### Example 2: Fitting an Ornstein-Uhlenbeck model to Simulated Data
 
 
-####Motivation:
+#### Motivation:
 In the Moving Pictures example above, we don't know for sure what the biologically correct answer is, althought the strong differences in PCoA clusters between body-sites suggests we should see different theta values for each body site.
 
 Data simulated under an OU model, or other models provide a chance to try out model fitting when we know what the correct answer should be.
