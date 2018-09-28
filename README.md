@@ -7,6 +7,7 @@
 **Other links**
 * [karenina](https://github.com/zaneveld/karenina)
 * [Documentation](https://zaneveld.github.io/karenina/html/index.html)
+* [QIIME 2](https://qiime2.org)
 
 ### Approach
 
