@@ -159,8 +159,7 @@ Finally, if you're having any trouble, it's worth noting that .qzv files are sim
 
 If you successfully ran the fit-timeseries command and opened the .qzv file, you should now have a result .csv (comma-separated values) text file that can be opened in Microsoft Excel, Google Sheets, etc.
 
-
-![image|690x463](upload://x8QnfZidaY3JZZPGZ0fJGrWBDS.png) 
+![image|690x463](https://i.imgur.com/RDbiRQu.png) 
 
 Let's take a look.
 
@@ -220,20 +219,24 @@ This process takes some time, so we've provided the output data [here](https://g
 
 Use one of the methods discribed above to open.
 
-
 _visualization.qzv_ contains output files with the  cohort model parameters. The cohort output can be viewed below, displaying estimations approaching the input parameters for the simulation described above.
 
-![image|690x141](upload://x3TabqmdXi1gYsH6MojSq8lf6Zb.png) 
+![image|690x141](https://i.imgur.com/liy98gt.png) 
 
-## Usage: qiime karenina fit_timeseries
 
->![image|241x250](upload://aFib6lXLoXpMbhYVBZcQPnrNuxq.png) 
->![image|241x250](upload://ssyaPPslQqFKCCF02KnSBUKvoqE.png) 
->![image|241x250](upload://qNJHniWKMUodqDCToDFyM14A4yj.png) 
 
 ## Coming up!
 
 * **[Method] qiime karenina spatial-ornstein-uhlenbeck**: We are currently developing a Qiime2 method for generation of Ornstein Uhlenbeck simulations which output Q2 PCoA Results, Metadata, Euclidean Distance Matrix, and an output visualization (see [spatial_ornstein_uhlenbeck](https://zaneveld.github.io/karenina/html/index.html#spatial-ornstein-uhlenbeck)).
 * **[Visualizer] qiime karenina visualization**: We are currently working on separating the visualization generated within the Ornstein Uhlenbeck simulation to allow for visualization of user PCoA timeseries.
+* **Benchmarking of individual time-series fit accuracy***: We are currently benchmarking accuracy across a range of scenarios.
+Preliminary results fitting an OU model to simulated data within a single individual/PC axis
+
+Sigma
+>![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_sigma_err.png?raw=true) 
+Lambda
+>![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_lambda_err.png?raw=true) 
+Theta
+>![image|241x250](https://github.com/SLPeoples/karenina/blob/master/data/outputs/benchmarking/benchmark_theta_err.png?raw=true) 
 
 Please feel free to submit any issues or suggestions as we continue to develop this plugin!
