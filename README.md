@@ -28,8 +28,10 @@ QIIME2 Metadata (if metadata are not embedded in Ordination Results)
 In practice, the sample should have multiple time-points per individual.
 
 
-**Links**
+**Tutorial**
+* [q2-karenina tutorial](https://github.com/zaneveld/q2-karenina/blob/master/doc/q2-karenina_tutorial.md)
 
+**Other links**
 * [karenina](https://github.com/zaneveld/karenina)
 * [Documentation](https://zaneveld.github.io/karenina/html/index.html)
 * [Qiime2](https://qiime2.org)
