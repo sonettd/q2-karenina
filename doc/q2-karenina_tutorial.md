@@ -60,7 +60,7 @@ sigma - this describes the intrinsic volatility of a community at each timepoint
 theta - this describes an attractor or 'home location' that the process will tend to return to over time.
 lambda - the strength with which the particle is attracted back to its home location.
 
-### Example 1: Fitting an Ornstein Uhlenbeck model to the Moving Pictures dataset
+### Example 1: Fitting individual time-series Ornstein Uhlenbeck models to the Moving Pictures dataset
 
 
 #### Motivation
@@ -167,18 +167,19 @@ The results .csv file has columns for describing the metadata parameter(s) on wh
 
  
 
-### Example 2: Fitting an Ornstein-Uhlenbeck model to Simulated Data
+### Example 2: Fitting a cohort Ornstein-Uhlenbeck model to Simulated Data
 
+#### Motivation: Cohort vs. Individual Models
+In addition to fitting individual time-series, q2-karenina can fit OU models to sets of individuals that are part of the same treatment, and may therefore have similar microbiome dynamics. Currently, a cohort model fit implies that all individuals in the cohort share a *single* set of microbiome parameters. (Future extensions will allow for inter-individual variance in the mean position theta, while sharing information across individuals about sigma and lambda).
 
-#### Motivation:
+We'll try out the time-series model using a simulated dataset.
+
+#### The dataset:
 In the Moving Pictures example above, we don't know for sure what the biologically correct answer is, althought the strong differences in PCoA clusters between body-sites suggests we should see different theta values for each body site.
 
 Data simulated under an OU model, or other models provide a chance to try out model fitting when we know what the correct answer should be.
 
 The karenina package provides capabilities for simulating microbiome ordination results for an experiment under various assumptions. In this section of the tutorial we'll show how you could use q2-karenina to fit a model to the results of those simulations. That package also allows export of movies to display simulated datasets (using ffmpeg) 
-
-
-#### The simulated dataset
 
 The data we will be using simulated an 'Anna Karenina Principle' effect within a group of six individuals, sampled over 50 timepoints. Specifically, it simulates a case in which some perturbation is applied to a treatment group, and reduces their ability to maintain a consistent microbiome. This is implemented in practice by reducing the lambda parameter of the Ornstein-Uhlenbeck model. 
 
@@ -196,7 +197,7 @@ The outcome produces the following model:
 
 ![Animation of AKP effects](https://media.giphy.com/media/ce1T0un8hq8W7v8qcm/giphy.gif)
 
-#### Fitting the simulated datset using a cohort model
+#### Fitting the simulated datset using a cohort OU model
 
 > **Note:** If you didn't download both datasets at the beginning, The data used in this tutorial can be found [here](https://github.com/zaneveld/karenina/blob/master/data/fit_timeseries/simulation.qza?raw=true)
 
